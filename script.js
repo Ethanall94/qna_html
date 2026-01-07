@@ -29,7 +29,11 @@ document.getElementById("fileInput").addEventListener("change", e => {
 
 function speak(text) {
   speechSynthesis.cancel();
-  speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'en-US';
+  
+  speechSynthesis.speak(utterance);
 }
 
 function nextQuestion() {
@@ -98,3 +102,4 @@ function updateProgress() {
   document.getElementById("progress-text").textContent = `${currentIndex} / ${totalCount}`;
 
 }
+
