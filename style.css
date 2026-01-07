@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+
+.choice {
+    width: 90%;
+    padding: 15px;
+    margin: 8px auto;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background: #eee;
+  }
+  
+.choice.correct {
+    background: #4caf50;
+    color: white;
+  }
+  
+.choice.wrong {
+    background: #f44336;
+    color: white;
+  }
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+button:active {
+    transform: scale(0.97);
+  }
+
+
+/* progress-bar */
+#progress-container {
+  width: 90%;
+  max-width: 420px;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  justify-self: center;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+#progress-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
