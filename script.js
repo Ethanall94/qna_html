@@ -15,8 +15,9 @@ document.getElementById("fileInput").addEventListener("change", e => {
   reader.onload = () => {
     try {
       allWords = JSON.parse(reader.result);
-      words = [...allWords];
-      totalCount = allWords.length;
+      const shuffled = allWords.sort(() => Math.random() - 0.5);
+      words = shuffled.slice(0, 500);
+      totalCount = words.length;
       currentIndex = 0;
       nextQuestion();
     } catch {
@@ -95,4 +96,5 @@ function updateProgress() {
   const percent = (currentIndex / totalCount) * 100;
   document.getElementById("progress-bar").style.width = percent + "%";
   document.getElementById("progress-text").textContent = `${currentIndex} / ${totalCount}`;
+
 }
